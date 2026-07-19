@@ -1,0 +1,20 @@
+<svg viewBox="0 0 450 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- P Icon - Stylized Ribbon -->
+  <!-- Dark Blue Top Ribbon -->
+  <path d="M 15 15 L 45 15 C 75 15 85 40 55 55 L 15 55 Z" fill="#0A192F" />
+  <!-- Inner Cutout for Top Ribbon -->
+  <path d="M 35 30 C 55 30 60 20 45 20 L 35 20 Z" fill="#FFFFFF" />
+  <!-- Vertical Stem -->
+  <path d="M 15 15 L 35 15 L 35 85 L 15 85 Z" fill="#0A192F" />
+  
+  <!-- Green Bottom Ribbon -->
+  <path d="M 35 55 C 80 55 90 85 45 85 L 45 65 C 65 65 65 55 55 55 Z" fill="#4CAF50" />
+
+  <!-- Main Text -->
+  <text x="110" y="55" fill="#0A192F" font-family="'Inter', 'Segoe UI', sans-serif" font-size="44" font-weight="900" letter-spacing="4">PRAMUKH</text>
+  
+  <!-- Secondary Text with Lines -->
+  <line x1="115" y1="78" x2="190" y2="78" stroke="#4CAF50" stroke-width="2" />
+  <text x="210" y="85" fill="#4CAF50" font-family="'Inter', 'Segoe UI', sans-serif" font-size="22" font-weight="700" letter-spacing="10">SCRAP</text>
+  <line x1="335" y1="78" x2="410" y2="78" stroke="#4CAF50" stroke-width="2" />
+</svg>

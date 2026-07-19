@@ -1,0 +1,174 @@
+.industries {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.industries .text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.industries-separator {
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-green);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.industries-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.industry-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 170px;
+  text-align: center;
+  flex-shrink: 0;
+  border-right: 1px solid #eaeaea;
+  padding: 0 25px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.industry-item:last-child {
+  border-right: none;
+}
+
+.industry-item:hover {
+  transform: translateY(-5px);
+}
+
+.industry-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+  height: 60px;
+}
+
+.industry-item p {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Animations */
+.industry-item:hover .anim-machine {
+  animation: shakeSmall 0.5s ease-in-out infinite alternate;
+}
+.industry-item:hover .anim-pulse {
+  animation: colorPulse 1s infinite alternate;
+}
+.industry-item:hover .anim-expand {
+  animation: expandY 1.5s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+.industry-item:hover .anim-fill {
+  animation: floatUp 1.5s ease-in-out infinite alternate;
+}
+.industry-item:hover .anim-flow {
+  animation: dropFlow 1s linear infinite;
+}
+.industry-item:hover .anim-box {
+  animation: boxBounce 1.5s ease-in-out infinite alternate;
+}
+.industry-item:hover .anim-spin-slow {
+  animation: spinSlow 3s linear infinite;
+  transform-origin: center;
+}
+.industry-item:hover .anim-drive {
+  animation: driveBump 0.5s ease-in-out infinite alternate;
+}
+.industry-item:hover .anim-spin {
+  animation: spinSlow 1s linear infinite;
+  transform-origin: center;
+}
+.industry-item:hover .anim-shake {
+  animation: shakeSmall 1s ease-in-out infinite alternate;
+}
+
+@keyframes shakeSmall {
+  0% { transform: translateX(-1px); }
+  100% { transform: translateX(1px); }
+}
+@keyframes colorPulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+@keyframes expandY {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(1.05); }
+}
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+@keyframes dropFlow {
+  0% { transform: translateY(-2px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(4px); opacity: 0; }
+}
+@keyframes boxBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes driveBump {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-2px); }
+}
+
+/* Hide scrollbar for cleaner look */
+.industries-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.industries-grid::-webkit-scrollbar-track {
+  background: var(--bg-light);
+  border-radius: 4px;
+}
+.industries-grid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+@media (max-width: 992px) {
+  .industries-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    overflow-x: visible;
+  }
+  .industry-item {
+    border-right: none;
+    width: calc(33.333% - 20px);
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .industry-item {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 576px) {
+  .industry-item {
+    width: 100%;
+  }
+}

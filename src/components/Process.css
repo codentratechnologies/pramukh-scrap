@@ -1,0 +1,185 @@
+.process {
+  padding: 80px 0;
+  background-color: var(--white);
+  border-top: 1px solid var(--bg-light);
+}
+
+.process .text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process-separator {
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-green);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.process-timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 50px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.process-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  background-color: var(--white);
+  color: var(--text-dark); /* Dark line art */
+  transition: border-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.process-icon svg {
+  color: #333; /* Make SVG lines dark */
+}
+
+/* Add a subtle green touch on hover */
+.process-step:hover .process-icon {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+  transform: scale(1.05);
+}
+
+.process-step:hover .process-icon svg {
+  color: var(--primary-green);
+}
+
+/* Animations */
+.process-step:hover .truck-wheel {
+  animation: spinWheel 1s linear infinite;
+  transform-origin: center;
+}
+
+.process-step:hover .truck-body {
+  animation: truckBump 0.5s ease infinite alternate;
+}
+
+.process-step:hover .anim-float {
+  animation: floatUp 1.5s ease-in-out infinite alternate;
+}
+
+.process-step:hover .anim-spin {
+  animation: spinWheel 3s linear infinite;
+}
+
+.process-step:hover .anim-drop {
+  animation: waterDrop 1.5s ease-in-out infinite alternate;
+}
+
+.process-step:hover .anim-fall {
+  animation: fallDown 1s linear infinite;
+}
+
+.process-step:hover .anim-check {
+  animation: popCheck 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.process-step:hover .anim-bounce {
+  animation: floatUp 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes spinWheel {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes truckBump {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2px); }
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-4px); }
+}
+
+@keyframes waterDrop {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.9) translateY(2px); }
+  100% { transform: scale(1.05) translateY(-2px); }
+}
+
+@keyframes fallDown {
+  0% { transform: translateY(-4px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(6px); opacity: 0; }
+}
+
+@keyframes popCheck {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.process-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.process-arrow {
+  display: flex;
+  align-items: center;
+  height: 80px; /* Align with circles */
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+/* Hide scrollbar for a cleaner look but keep scrollability */
+.process-timeline::-webkit-scrollbar {
+  height: 6px;
+}
+.process-timeline::-webkit-scrollbar-track {
+  background: var(--bg-light);
+  border-radius: 4px;
+}
+.process-timeline::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+@media (max-width: 992px) {
+  .process-timeline {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    overflow-x: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .process-step {
+    width: 100%;
+  }
+  .process-arrow {
+    transform: rotate(90deg);
+    height: 50px;
+  }
+}
