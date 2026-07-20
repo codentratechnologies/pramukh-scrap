@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
           <path d="M12 2v12 M9 11l3 3 3-3" />
         </svg>
       ), 
-      number: "5000+", 
+      number: "30+", 
       label: "Tons Recycled Monthly" 
     },
     { 

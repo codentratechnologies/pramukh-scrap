@@ -99,7 +99,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h5>Call Us</h5>
-                  <p>+91 98765 43210</p>
+                  <p>+91 6353153240</p>
                 </div>
               </div>
               
