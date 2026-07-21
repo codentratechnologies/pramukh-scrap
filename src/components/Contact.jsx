@@ -52,30 +52,31 @@ const Contact = () => {
     
     if (validateForm()) {
       setStatus('Sending...');
-      fetch("https://api.web3forms.com/submit", {
+      fetch("https://api.emailjs.com/api/v1.0/email/send", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
         },
         body: JSON.stringify({
-            access_key: "8eeb181d-0918-4c5f-9baa-f982a687201b", 
-            name: formData.name,
-            email: formData.email,
-            "Inquiry Subject": formData.subject || "Not provided",
-            subject: formData.subject ? `Website Inquiry: ${formData.subject}` : "New Contact Form Submission",
-            message: formData.message,
-            from_name: "Pramukh Scrap Website",
+            service_id: "service_6j8klbc",
+            template_id: "template_umy2w4i",
+            user_id: "juBV8F5-0B564Z4Ay", // We need this!
+            template_params: {
+                name: formData.name,
+                email: formData.email,
+                subject: formData.subject || "Not provided",
+                message: formData.message,
+            }
         })
       })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
+      .then(response => {
+        if (response.ok) {
           setStatus('Thank you for reaching out! We will get back to you soon.');
           setFormData({ name: '', email: '', subject: '', message: '' });
           setErrors({});
         } else {
-          setStatus('Oops! There was a problem submitting your form.');
+          return response.text().then(text => { throw new Error(text) });
         }
       })
       .catch(error => {
