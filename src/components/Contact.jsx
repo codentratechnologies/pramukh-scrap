@@ -62,7 +62,8 @@ const Contact = () => {
             access_key: "8eeb181d-0918-4c5f-9baa-f982a687201b", 
             name: formData.name,
             email: formData.email,
-            subject: formData.subject || "New Inquiry from Website",
+            "Inquiry Subject": formData.subject || "Not provided",
+            subject: formData.subject ? `Website Inquiry: ${formData.subject}` : "New Contact Form Submission",
             message: formData.message,
             from_name: "Pramukh Scrap Website",
         })
