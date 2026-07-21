@@ -61,8 +61,11 @@ const Contact = () => {
         body: JSON.stringify({
             name: formData.name,
             email: formData.email,
-            subject: formData.subject,
-            message: formData.message
+            "User's Subject": formData.subject || 'None',
+            message: formData.message,
+            _subject: "New Inquiry from Pramukh Scrap Website",
+            _template: "box",
+            _autoresponse: "Thank you for contacting Pramukh Scrap & Polymers. We have received your message and will get back to you shortly. \n\nBest Regards,\nPramukh Scrap Team"
         })
       })
       .then(response => response.json())
