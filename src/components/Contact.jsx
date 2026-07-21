@@ -52,27 +52,30 @@ const Contact = () => {
     
     if (validateForm()) {
       setStatus('Sending...');
-      fetch("https://formsubmit.co/ajax/pramukhscrap36@gmail.com", {
+      fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
         },
         body: JSON.stringify({
+            access_key: "8eeb181d-0918-4c5f-9baa-f982a687201b", 
             name: formData.name,
             email: formData.email,
-            "User's Subject": formData.subject || 'None',
+            subject: formData.subject || "New Inquiry from Website",
             message: formData.message,
-            _subject: "New Inquiry from Pramukh Scrap Website",
-            _template: "box",
-            _autoresponse: "Thank you for contacting Pramukh Scrap & Polymers. We have received your message and will get back to you shortly. \n\nBest Regards,\nPramukh Scrap Team"
+            from_name: "Pramukh Scrap Website",
         })
       })
       .then(response => response.json())
       .then(data => {
-        setStatus('Thank you for reaching out! We will get back to you soon.');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setErrors({});
+        if (data.success) {
+          setStatus('Thank you for reaching out! We will get back to you soon.');
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setErrors({});
+        } else {
+          setStatus('Oops! There was a problem submitting your form.');
+        }
       })
       .catch(error => {
         console.error(error);
