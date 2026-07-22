@@ -44,8 +44,8 @@ const About = () => {
             <div className="about-feature-item">
               <div className="about-feature-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22c4.97-4.97 9-9.5 9-13.5 0-4.97-4.03-9-9-9s-9 4.03-9 9c0 4.03 4.03 8.53 9 13.5z"/>
-                  <circle cx="12" cy="8.5" r="3"/>
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                  <path d="M2 22c1.25-.97 2.6-2.81 3.25-5.18"/>
                 </svg>
               </div>
               <p>Environment<br/>Friendly</p>
